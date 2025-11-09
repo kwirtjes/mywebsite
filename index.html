@@ -2,20 +2,131 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Kaylee’s Website</title>
-  <style>
-    body {
-      font-family: system-ui, sans-serif;
-      margin: 2rem;
-      background: #fafafa;
-      line-height: 1.6;
-    }
-    h1 { color: #333; }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kaylee’s Corner</title>
+  <meta name="description" content="Kaylee’s cozy pastel blog." />
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-  <h1>Hello from Kaylee 👋</h1>
-  <p>This site is hosted with GitHub Pages!</p>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="logo-dot" aria-hidden="true"></span>
+        <a class="brand-title" href="index.html">Kaylee’s <strong>Corner</strong></a>
+      </div>
+
+      <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-controls="siteNav">Menu</button>
+
+      <nav id="siteNav" class="nav" aria-label="Main">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="#about">About</a>
+        <a href="#recent">Blogs</a>
+        <a href="#gallery">Images</a>
+        <a href="#message">Message</a>
+      </nav>
+    </div>
+
+    <!-- Wavy pastel accent -->
+    <div class="wave-wrap" aria-hidden="true">
+      <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none">
+        <path d="M0,20 C160,60 320,0 480,25 C640,50 800,5 960,25 C1120,45 1280,15 1440,25 L1440,70 L0,70 Z"></path>
+      </svg>
+    </div>
+  </header>
+
+  <main id="content">
+    <!-- Recent Posts -->
+    <section class="container" id="recent" aria-labelledby="recent-title">
+      <h2 id="recent-title" class="section-title">Recent Posts</h2>
+
+      <div class="card-grid">
+        <!-- Card 1 -->
+        <article class="card">
+          <a class="thumb" href="#">
+            <!-- 👇 PUT YOUR IMAGE HERE -->
+            <img src="images/post1.jpg" alt="Photo for post 1" />
+          </a>
+          <div class="card-body">
+            <h3 class="card-title"><a href="#">Welcome to my blog</a></h3>
+            <p class="meta"><time datetime="2025-11-09">Nov 9, 2025</time> • intro</p>
+            <p class="card-text">Why I’m building this site and what I’ll post about.</p>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card">
+          <a class="thumb" href="#">
+            <!-- 👇 PUT YOUR IMAGE HERE -->
+            <img src="images/post2.jpg" alt="Photo for post 2" />
+          </a>
+          <div class="card-body">
+            <h3 class="card-title"><a href="#">My first project</a></h3>
+            <p class="meta"><time datetime="2025-11-10">Nov 10, 2025</time> • school</p>
+            <p class="card-text">Quick notes on HTML/CSS wins and what I learned.</p>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card">
+          <a class="thumb" href="#">
+            <!-- 👇 PUT YOUR IMAGE HERE -->
+            <img src="images/post3.jpg" alt="Photo for post 3" />
+          </a>
+          <div class="card-body">
+            <h3 class="card-title"><a href="#">Life update</a></h3>
+            <p class="meta"><time datetime="2025-11-12">Nov 12, 2025</time> • life</p>
+            <p class="card-text">A small check-in and what’s next.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Images (placeholder section you can expand later) -->
+    <section class="container" id="gallery" aria-labelledby="gallery-title">
+      <h2 id="gallery-title" class="section-title">Images</h2>
+      <p class="muted">You can add a gallery here later. For now, the three cards above show your photos.</p>
+    </section>
+
+    <!-- About -->
+    <section class="container about" id="about" aria-labelledby="about-title">
+      <h2 id="about-title" class="section-title">About</h2>
+      <p>Hi! I’m Kaylee. I’m studying Software Development at Ivy Tech. This blog is where I share school projects, tips, and a bit of life. Built with love and pastels.</p>
+    </section>
+
+    <!-- Message -->
+    <section class="container message" id="message" aria-labelledby="message-title">
+      <h2 id="message-title" class="section-title">Message</h2>
+      <form class="contact" aria-label="Contact form" onsubmit="event.preventDefault(); alert('Thanks for your message!');">
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" placeholder="Your name" required>
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" placeholder="you@example.com" required>
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea name="msg" rows="4" placeholder="Say hi..."></textarea>
+        </label>
+        <button class="btn" type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-dot" aria-hidden="true"></span>
+        <span class="footer-title">Kaylee’s Corner</span>
+      </div>
+      <p class="muted">&copy; <span id="year"></span> Kaylee • Built for Web Site Development</p>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
 </body>
 </html>
