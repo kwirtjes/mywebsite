@@ -1,112 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kaylee’s Corner</title>
-  <meta name="description" content="Kaylee’s cozy pastel blog." />
-  <link rel="stylesheet" href="assets/style.css?v=3" />
+<meta charset="utf-8">
+<title>CSS Litmus</title>
+<style>
+  body{background:#ffe4f1;font-family:system-ui;margin:0}
+  h1{color:#1f2a44;text-align:center;margin:24px 0}
+  .box{margin:24px auto;max-width:640px;background:#fff;padding:24px;border-radius:16px;box-shadow:0 8px 24px #0001}
+</style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="site-header">
-    <div class="header-top">
-      <h1>Kaylee’s Corner</h1>
-      <nav>
-        <a href="#">Home</a>
-        <a href="#about">About</a>
-        <a href="#recent">Blogs</a>
-        <a href="#images">Images</a>
-        <a href="#contact">Message</a>
-      </nav>
-    </div>
-
-    <!-- Wave under header -->
-    <div class="wave-wrap" aria-hidden="true">
-      <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none">
-        <path fill="rgba(255,255,255,0.65)" d="M0,20 C160,60 320,0 480,25 C640,50 800,5 960,25 C1120,45 1280,15 1440,25 L1440,70 L0,70 Z"></path>
-      </svg>
-    </div>
-  </header>
-
-  <main>
-    <!-- Recent Posts -->
-    <section id="recent">
-      <h2>Recent Posts</h2>
-      <div class="cards">
-        <article>
-          <img src="images/post1.jpg" alt="Photo 1" />
-          <h3>Welcome to my blog</h3>
-          <p>Why I’m building this site and what I’ll post about.</p>
-        </article>
-        <article>
-          <img src="images/post2.jpg" alt="Photo 2" />
-          <h3>My first project</h3>
-          <p>Quick notes on HTML/CSS wins and what I learned.</p>
-        </article>
-        <article>
-          <img src="images/post3.jpg" alt="Photo 3" />
-          <h3>Life update</h3>
-          <p>A small check-in and what’s next.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Wave under posts -->
-    <div class="wave-wrap" aria-hidden="true">
-      <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none">
-        <path fill="rgba(255,255,255,0.65)" d="M0,20 C160,60 320,0 480,25 C640,50 800,5 960,25 C1120,45 1280,15 1440,25 L1440,70 L0,70 Z"></path>
-      </svg>
-    </div>
-
-    <!-- About -->
-    <section id="about">
-      <h2>About</h2>
-      <p>Hi! I’m Kaylee. I’m studying Software Development at Ivy Tech and using this blog to share projects, progress, and ideas.</p>
-    </section>
-
-    <!-- Wave under about -->
-    <div class="wave-wrap" aria-hidden="true">
-      <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none">
-        <path fill="rgba(255,255,255,0.65)" d="M0,20 C160,60 320,0 480,25 C640,50 800,5 960,25 C1120,45 1280,15 1440,25 L1440,70 L0,70 Z"></path>
-      </svg>
-    </div>
-
-    <!-- Images -->
-    <section id="images">
-      <h2>Images</h2>
-      <p>Here’s where I’ll share fun photos and personal memories as I keep learning and growing.</p>
-      <div class="cards">
-        <img src="images/post1.jpg" alt="Romeo" />
-        <img src="images/post2.jpg" alt="Fall outfit" />
-        <img src="images/post3.jpg" alt="Sunset" />
-      </div>
-    </section>
-
-    <!-- Wave under images -->
-    <div class="wave-wrap" aria-hidden="true">
-      <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none">
-        <path fill="rgba(255,255,255,0.65)" d="M0,20 C160,60 320,0 480,25 C640,50 800,5 960,25 C1120,45 1280,15 1440,25 L1440,70 L0,70 Z"></path>
-      </svg>
-    </div>
-
-    <!-- Contact -->
-    <section id="contact">
-      <h2>Message Me</h2>
-      <form onsubmit="event.preventDefault(); alert('Thanks for your message!');">
-        <input type="text" placeholder="Your name" required />
-        <input type="email" placeholder="Email" required />
-        <textarea rows="4" placeholder="Your message..."></textarea>
-        <button type="submit">Send</button>
-      </form>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; <span id="year"></span> Kaylee • Built with 💕</p>
-  </footer>
-
-  <script src="assets/script.js"></script>
+  <h1>CSS is WORKING ✅</h1>
+  <div class="box">If you see a pink background and a rounded white card, your CSS is being applied.</div>
 </body>
 </html>
