@@ -98,10 +98,17 @@
     font-size:1.8rem; letter-spacing:.4px;
   }
   .chip{
-    width:96px; height:96px; border-radius:50%;
-    background:#d8f4ee; color:#1e5e59; display:grid; place-items:center;
-    font-weight:600; box-shadow: inset 0 0 0 4px rgba(255,255,255,.35);
-  }
+  width:96px; height:96px; border-radius:50%;
+  overflow:hidden;
+  box-shadow:0 4px 10px rgba(0,0,0,0.15), inset 0 0 0 3px rgba(255,255,255,0.35);
+}
+
+.chip img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
 
   /* responsive */
   @media (max-width:860px){ .cards{ grid-template-columns: 1fr 1fr; } }
@@ -171,7 +178,10 @@
     <!-- teal footer strip with brand + circle -->
     <footer class="footer-bar" role="contentinfo">
       <div class="brand">Kaylee’s Corner</div>
-      <div class="chip">IMG_5698.jpeg</div>
+      <div class="chip">
+  <img src="images/self.jpg" alt="Kaylee's self image">
+</div>
+
     </footer>
   </div>
 </body>
