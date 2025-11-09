@@ -1,132 +1,179 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kaylee’s Corner</title>
-  <meta name="description" content="Kaylee’s cozy pastel blog." />
-  <link rel="stylesheet" href="assets/style.css" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kaylee’s Corner</title>
+<meta name="description" content="Kaylee’s cozy pastel blog." />
+<style>
+  /* --- page & layout --- */
+  :root{
+    --bg: #d9f3f3;         /* aqua page background */
+    --panel: #fff1b8;      /* butter yellow */
+    --lav: #e6dbff;        /* lavender header bar */
+    --ink: #1b2340;        /* dark text */
+    --muted: #5c6a87;
+    --card: #ffffff;
+    --teal: #82cfc7;       /* footer bar */
+    --teal-dark:#64b9b0;
+    --shadow: 0 12px 30px rgba(0,0,0,.08);
+    --radius: 20px;
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--bg); font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--ink);}
+
+  .wrap{max-width:980px; margin:32px auto; padding:0 16px;}
+
+  /* --- header pill --- */
+  .header-pill{
+    background:var(--lav);
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    padding:14px 18px;
+  }
+  .nav{
+    display:flex; justify-content:center; gap:42px; flex-wrap:wrap;
+    font-weight:600; color:#222;
+  }
+  .nav a{ color:#2b3356; text-decoration:none; }
+  .nav a:hover{ text-decoration:underline; }
+
+  /* --- content panel --- */
+  .panel{
+    background:var(--panel);
+    border-radius:16px;
+    margin-top:14px;
+    box-shadow:var(--shadow);
+    padding:22px 22px 28px;
+  }
+
+  /* decorative squiggle under the nav */
+  .squiggle{ height:36px; overflow:hidden; }
+  .squiggle path{ stroke:#f4cfe1; stroke-width:3; fill:none; opacity:.9 }
+
+  h2.title{
+    text-align:center;
+    font-size:clamp(1.6rem, 1.2rem + 1.8vw, 2.2rem);
+    font-family: ui-rounded, "Comic Sans MS", "Bradley Hand", cursive; /* playful cursive fallback */
+    color:#cf6a9a;
+    margin:8px 0 18px;
+  }
+
+  /* --- cards row --- */
+  .cards{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:22px;
+    padding:6px 10px;
+  }
+  .card{
+    background:var(--card);
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    padding:16px;
+  }
+  .thumb{
+    display:block; width:100%; aspect-ratio: 4/3;
+    border-radius:18px; overflow:hidden; background:#f2f4f7;
+    margin-bottom:12px;
+  }
+  .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .caption{ color:var(--muted); margin-top:8px; }
+
+  /* --- footer bar --- */
+  .footer-bar{
+    margin-top:18px;
+    background:linear-gradient(180deg, var(--teal), var(--teal-dark));
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    min-height:110px;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:26px 28px;
+    color:#fff;
+  }
+  .brand{
+    font-family: ui-rounded, "Comic Sans MS", "Bradley Hand", cursive;
+    font-size:1.8rem; letter-spacing:.4px;
+  }
+  .chip{
+    width:96px; height:96px; border-radius:50%;
+    background:#d8f4ee; color:#1e5e59; display:grid; place-items:center;
+    font-weight:600; box-shadow: inset 0 0 0 4px rgba(255,255,255,.35);
+  }
+
+  /* responsive */
+  @media (max-width:860px){ .cards{ grid-template-columns: 1fr 1fr; } }
+  @media (max-width:560px){
+    .cards{ grid-template-columns: 1fr; }
+    .footer-bar{ flex-direction:column; gap:14px; text-align:center; }
+  }
+</style>
 </head>
 <body>
-  <a class="skip" href="#content">Skip to content</a>
-
-  <!-- Header / Nav -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <span class="logo-dot" aria-hidden="true"></span>
-        <a class="brand-title" href="index.html">Kaylee’s <strong>Corner</strong></a>
-      </div>
-
-      <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-controls="siteNav">Menu</button>
-
-      <nav id="siteNav" class="nav" aria-label="Main">
-        <a href="index.html" aria-current="page">Home</a>
+  <div class="wrap">
+    <!-- lavender rounded header with nav -->
+    <header class="header-pill" role="banner">
+      <nav class="nav" aria-label="Main">
         <a href="#about">About</a>
-        <a href="#recent">Blogs</a>
-        <a href="#gallery">Images</a>
+        <a href="#">Home</a>
+        <a href="#blogs">Blogs</a>
+        <a href="#images">Images</a>
         <a href="#message">Message</a>
       </nav>
-    </div>
+    </header>
 
-    <!-- Wavy pastel accent -->
-    <div class="wave-wrap" aria-hidden="true">
-      <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none">
-        <path d="M0,20 C160,60 320,0 480,25 C640,50 800,5 960,25 C1120,45 1280,15 1440,25 L1440,70 L0,70 Z"></path>
+    <!-- soft squiggle -->
+    <div class="squiggle" aria-hidden="true">
+      <svg viewBox="0 0 980 36" preserveAspectRatio="none">
+        <path d="M0 22 C80 10, 140 34, 220 20 S360 6, 440 22 560 34, 640 18 760 6, 840 24 940 28, 980 18"/>
       </svg>
     </div>
-  </header>
 
-  <main id="content">
-    <!-- Recent Posts -->
-    <section class="container" id="recent" aria-labelledby="recent-title">
-      <h2 id="recent-title" class="section-title">Recent Posts</h2>
+    <!-- butter-yellow content with recent posts -->
+    <main class="panel" id="blogs" role="main">
+      <h2 class="title">Recent Posts</h2>
 
-      <div class="card-grid">
-        <!-- Card 1 -->
+      <div class="cards">
+        <!-- CARD 1 -->
         <article class="card">
           <a class="thumb" href="#">
-            <!-- 👇 PUT YOUR IMAGE HERE -->
-            <img src="images/post1.jpg" alt="Photo for post 1" />
+            <!-- PUT YOUR IMAGE 1 HERE -->
+            <img src="images/post1.jpg" alt="Post image 1">
           </a>
-          <div class="card-body">
-            <h3 class="card-title"><a href="#">Welcome to my blog</a></h3>
-            <p class="meta"><time datetime="2025-11-09">Nov 9, 2025</time> • intro</p>
-            <p class="card-text">Why I’m building this site and what I’ll post about.</p>
-          </div>
+          <h3>Welcome to my blog</h3>
+          <p class="caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </article>
 
-        <!-- Card 2 -->
+        <!-- CARD 2 -->
         <article class="card">
           <a class="thumb" href="#">
-            <!-- 👇 PUT YOUR IMAGE HERE -->
-            <img src="images/post2.jpg" alt="Photo for post 2" />
+            <!-- PUT YOUR IMAGE 2 HERE -->
+            <img src="images/post2.jpg" alt="Post image 2">
           </a>
-          <div class="card-body">
-            <h3 class="card-title"><a href="#">My first project</a></h3>
-            <p class="meta"><time datetime="2025-11-10">Nov 10, 2025</time> • school</p>
-            <p class="card-text">Quick notes on HTML/CSS wins and what I learned.</p>
-          </div>
+          <h3>My first project</h3>
+          <p class="caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </article>
 
-        <!-- Card 3 -->
+        <!-- CARD 3 -->
         <article class="card">
           <a class="thumb" href="#">
-            <!-- 👇 PUT YOUR IMAGE HERE -->
-            <img src="images/post3.jpg" alt="Photo for post 3" />
+            <!-- PUT YOUR IMAGE 3 HERE -->
+            <img src="images/post3.jpg" alt="Post image 3">
           </a>
-          <div class="card-body">
-            <h3 class="card-title"><a href="#">Life update</a></h3>
-            <p class="meta"><time datetime="2025-11-12">Nov 12, 2025</time> • life</p>
-            <p class="card-text">A small check-in and what’s next.</p>
-          </div>
+          <h3>Life update</h3>
+          <p class="caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </article>
       </div>
-    </section>
+    </main>
 
-    <!-- Images (placeholder section you can expand later) -->
-    <section class="container" id="gallery" aria-labelledby="gallery-title">
-      <h2 id="gallery-title" class="section-title">Images</h2>
-      <p class="muted">You can add a gallery here later. For now, the three cards above show your photos.</p>
-    </section>
-
-    <!-- About -->
-    <section class="container about" id="about" aria-labelledby="about-title">
-      <h2 id="about-title" class="section-title">About</h2>
-      <p>Hi! I’m Kaylee. I’m studying Software Development at Ivy Tech. This blog is where I share school projects, tips, and a bit of life. Built with love and pastels.</p>
-    </section>
-
-    <!-- Message -->
-    <section class="container message" id="message" aria-labelledby="message-title">
-      <h2 id="message-title" class="section-title">Message</h2>
-      <form class="contact" aria-label="Contact form" onsubmit="event.preventDefault(); alert('Thanks for your message!');">
-        <label>
-          <span>Name</span>
-          <input type="text" name="name" placeholder="Your name" required>
-        </label>
-        <label>
-          <span>Email</span>
-          <input type="email" name="email" placeholder="you@example.com" required>
-        </label>
-        <label>
-          <span>Message</span>
-          <textarea name="msg" rows="4" placeholder="Say hi..."></textarea>
-        </label>
-        <button class="btn" type="submit">Send</button>
-      </form>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <span class="logo-dot" aria-hidden="true"></span>
-        <span class="footer-title">Kaylee’s Corner</span>
-      </div>
-      <p class="muted">&copy; <span id="year"></span> Kaylee • Built for Web Site Development</p>
-    </div>
-  </footer>
-
-  <script src="assets/script.js"></script>
+    <!-- teal footer strip with brand + circle -->
+    <footer class="footer-bar" role="contentinfo">
+      <div class="brand">Kaylee’s Corner</div>
+      <div class="chip">Self-image</div>
+    </footer>
+  </div>
 </body>
 </html>
+
