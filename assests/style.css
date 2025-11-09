@@ -1,3 +1,4 @@
+/* === Base Styles === */
 body {
   background: #fffaf3;
   font-family: system-ui, sans-serif;
@@ -5,20 +6,52 @@ body {
   color: #333;
 }
 
-header {
-  background: linear-gradient(90deg, #7c83fd, #ffb4c2, #b8f5d0);
-  padding: 1rem;
+h1, h2, h3 {
+  margin-top: 0;
+}
+
+main {
   text-align: center;
-  color: white;
+  padding: 2rem 0;
+}
+
+section {
+  padding: 2rem 1rem;
+}
+
+p {
+  max-width: 600px;
+  margin: 0 auto 1rem;
+}
+
+/* === Header === */
+.site-header {
+  background: linear-gradient(90deg, #7c83fd, #ffb4c2, #b8f5d0);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.header-top {
+  padding: 1rem 0;
+}
+
+nav {
+  margin-top: 0.5rem;
 }
 
 nav a {
-  color: white;
-  margin: 0 0.5rem;
+  color: #fff;
   text-decoration: none;
   font-weight: 600;
+  margin: 0 0.5rem;
 }
 
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* === Cards === */
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -42,6 +75,7 @@ nav a {
   object-fit: cover;
 }
 
+/* === Contact Form === */
 form {
   display: grid;
   gap: 0.5rem;
@@ -59,14 +93,54 @@ button {
   background: #7c83fd;
   color: white;
   border: none;
-  padding: 0.5rem;
+  padding: 0.6rem;
   border-radius: 0.5rem;
   cursor: pointer;
 }
 
+button:hover {
+  filter: brightness(1.05);
+}
+
+/* === Footer === */
 footer {
   background: #f2f5ff;
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
+}
+
+/* === Pastel Wave Animation === */
+.wave-wrap {
+  height: 40px;
+  overflow: hidden;
+  line-height: 0;
+  position: relative;
+}
+
+.wave {
+  width: 200%;
+  height: 40px;
+  animation: waveMove 8s linear infinite;
+}
+
+.wave path {
+  fill: rgba(255, 255, 255, 0.65);
+}
+
+/* Smooth animation */
+@keyframes waveMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* === Responsive === */
+@media (max-width: 700px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cards article {
+    width: 90%;
+  }
 }
