@@ -5,123 +5,128 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kaylee’s Corner</title>
   <meta name="description" content="Kaylee’s cozy pastel blog." />
-  <style>
-    body {background:#fffaf3;font-family:system-ui,sans-serif;margin:0;color:#333;}
-    h1,h2,h3{margin-top:0}
-    main{text-align:center;padding:2rem 0}
-    section{padding:2rem 1rem}
-    p{max-width:600px;margin:0 auto 1rem}
-    .site-header{background:linear-gradient(90deg,#7c83fd,#ffb4c2,#b8f5d0);color:#fff;box-shadow:0 4px 10px rgba(0,0,0,.1);text-align:center;}
-    .header-top{padding:1rem 0}
-    nav{margin-top:.5rem}
-    nav a{color:#fff;text-decoration:none;font-weight:600;margin:0 .5rem}
-    nav a:hover{text-decoration:underline}
-    .cards{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;padding:1rem}
-    .cards article{background:#fff;border-radius:1rem;box-shadow:0 4px 10px rgba(0,0,0,.1);padding:1rem;width:280px}
-    .cards img{width:100%;border-radius:1rem;height:180px;object-fit:cover;background:#f3f3f3}
-    form{display:grid;gap:.5rem;max-width:400px;margin:0 auto}
-    input,textarea{padding:.5rem;border-radius:.5rem;border:1px solid #ccc}
-    button{background:#7c83fd;color:#fff;border:none;padding:.6rem;border-radius:.5rem;cursor:pointer}
-    button:hover{filter:brightness(1.05)}
-    footer{background:#f2f5ff;text-align:center;padding:1rem;margin-top:2rem}
-    .wave-wrap{height:40px;overflow:hidden;line-height:0;position:relative}
-    .wave{width:200%;height:40px;animation:waveMove 8s linear infinite;display:block}
-    @keyframes waveMove{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-    @media(max-width:700px){.cards{flex-direction:column;align-items:center}.cards article{width:90%}}
-  </style>
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <!-- Header / Nav -->
   <header class="site-header">
-    <div class="header-top">
-      <h1>Kaylee’s Corner</h1>
-      <nav>
-        <a href="#">Home</a>
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="logo-dot" aria-hidden="true"></span>
+        <a class="brand-title" href="index.html">Kaylee’s <strong>Corner</strong></a>
+      </div>
+
+      <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-controls="siteNav">Menu</button>
+
+      <nav id="siteNav" class="nav" aria-label="Main">
+        <a href="index.html" aria-current="page">Home</a>
         <a href="#about">About</a>
         <a href="#recent">Blogs</a>
-        <a href="#images">Images</a>
-        <a href="#contact">Message</a>
+        <a href="#gallery">Images</a>
+        <a href="#message">Message</a>
       </nav>
     </div>
+
+    <!-- Wavy pastel accent -->
     <div class="wave-wrap" aria-hidden="true">
       <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none">
-        <path fill="rgba(255,255,255,0.65)" d="M0,20 C160,60 320,0 480,25 C640,50 800,5 960,25 C1120,45 1280,15 1440,25 L1440,70 L0,70 Z"></path>
+        <path d="M0,20 C160,60 320,0 480,25 C640,50 800,5 960,25 C1120,45 1280,15 1440,25 L1440,70 L0,70 Z"></path>
       </svg>
     </div>
   </header>
 
-  <main>
-    <section id="recent">
-      <h2>Recent Posts</h2>
-      <div class="cards">
-        <article>
-          <img src="images/post1.jpg" alt="Photo 1" />
-          <h3>Welcome to my blog</h3>
-          <p>Why I’m building this site and what I’ll post about.</p>
+  <main id="content">
+    <!-- Recent Posts -->
+    <section class="container" id="recent" aria-labelledby="recent-title">
+      <h2 id="recent-title" class="section-title">Recent Posts</h2>
+
+      <div class="card-grid">
+        <!-- Card 1 -->
+        <article class="card">
+          <a class="thumb" href="#">
+            <!-- 👇 PUT YOUR IMAGE HERE -->
+            <img src="images/post1.jpg" alt="Photo for post 1" />
+          </a>
+          <div class="card-body">
+            <h3 class="card-title"><a href="#">Welcome to my blog</a></h3>
+            <p class="meta"><time datetime="2025-11-09">Nov 9, 2025</time> • intro</p>
+            <p class="card-text">Why I’m building this site and what I’ll post about.</p>
+          </div>
         </article>
-        <article>
-          <img src="images/post2.jpg" alt="Photo 2" />
-          <h3>My first project</h3>
-          <p>Quick notes on HTML/CSS wins and what I learned.</p>
+
+        <!-- Card 2 -->
+        <article class="card">
+          <a class="thumb" href="#">
+            <!-- 👇 PUT YOUR IMAGE HERE -->
+            <img src="images/post2.jpg" alt="Photo for post 2" />
+          </a>
+          <div class="card-body">
+            <h3 class="card-title"><a href="#">My first project</a></h3>
+            <p class="meta"><time datetime="2025-11-10">Nov 10, 2025</time> • school</p>
+            <p class="card-text">Quick notes on HTML/CSS wins and what I learned.</p>
+          </div>
         </article>
-        <article>
-          <img src="images/post3.jpg" alt="Photo 3" />
-          <h3>Life update</h3>
-          <p>A small check-in and what’s next.</p>
+
+        <!-- Card 3 -->
+        <article class="card">
+          <a class="thumb" href="#">
+            <!-- 👇 PUT YOUR IMAGE HERE -->
+            <img src="images/post3.jpg" alt="Photo for post 3" />
+          </a>
+          <div class="card-body">
+            <h3 class="card-title"><a href="#">Life update</a></h3>
+            <p class="meta"><time datetime="2025-11-12">Nov 12, 2025</time> • life</p>
+            <p class="card-text">A small check-in and what’s next.</p>
+          </div>
         </article>
       </div>
     </section>
 
-    <div class="wave-wrap" aria-hidden="true">
-      <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none">
-        <path fill="rgba(255,255,255,0.65)" d="M0,20 C160,60 320,0 480,25 C640,50 800,5 960,25 C1120,45 1280,15 1440,25 L1440,70 L0,70 Z"></path>
-      </svg>
-    </div>
-
-    <section id="about">
-      <h2>About</h2>
-      <p>Hi! I’m Kaylee. I’m studying Software Development at Ivy Tech and using this blog to share projects, progress, and ideas.</p>
+    <!-- Images (placeholder section you can expand later) -->
+    <section class="container" id="gallery" aria-labelledby="gallery-title">
+      <h2 id="gallery-title" class="section-title">Images</h2>
+      <p class="muted">You can add a gallery here later. For now, the three cards above show your photos.</p>
     </section>
 
-    <div class="wave-wrap" aria-hidden="true">
-      <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none">
-        <path fill="rgba(255,255,255,0.65)" d="M0,20 C160,60 320,0 480,25 C640,50 800,5 960,25 C1120,45 1280,15 1440,25 L1440,70 L0,70 Z"></path>
-      </svg>
-    </div>
-
-    <section id="images">
-      <h2>Images</h2>
-      <p>Here’s where I’ll share fun photos and personal memories as I keep learning and growing.</p>
-      <div class="cards">
-        <article><img src="images/post1.jpg" alt="Romeo"></article>
-        <article><img src="images/post2.jpg" alt="Fall outfit"></article>
-        <article><img src="images/post3.jpg" alt="Sunset"></article>
-      </div>
+    <!-- About -->
+    <section class="container about" id="about" aria-labelledby="about-title">
+      <h2 id="about-title" class="section-title">About</h2>
+      <p>Hi! I’m Kaylee. I’m studying Software Development at Ivy Tech. This blog is where I share school projects, tips, and a bit of life. Built with love and pastels.</p>
     </section>
 
-    <div class="wave-wrap" aria-hidden="true">
-      <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none">
-        <path fill="rgba(255,255,255,0.65)" d="M0,20 C160,60 320,0 480,25 C640,50 800,5 960,25 C1120,45 1280,15 1440,25 L1440,70 L0,70 Z"></path>
-      </svg>
-    </div>
-
-    <section id="contact">
-      <h2>Message Me</h2>
-      <form onsubmit="event.preventDefault();alert('Thanks for your message!')">
-        <input type="text" placeholder="Your name" required>
-        <input type="email" placeholder="Email" required>
-        <textarea rows="4" placeholder="Your message..."></textarea>
-        <button type="submit">Send</button>
+    <!-- Message -->
+    <section class="container message" id="message" aria-labelledby="message-title">
+      <h2 id="message-title" class="section-title">Message</h2>
+      <form class="contact" aria-label="Contact form" onsubmit="event.preventDefault(); alert('Thanks for your message!');">
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" placeholder="Your name" required>
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" placeholder="you@example.com" required>
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea name="msg" rows="4" placeholder="Say hi..."></textarea>
+        </label>
+        <button class="btn" type="submit">Send</button>
       </form>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; <span id="year"></span> Kaylee • Built with 💕</p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-dot" aria-hidden="true"></span>
+        <span class="footer-title">Kaylee’s Corner</span>
+      </div>
+      <p class="muted">&copy; <span id="year"></span> Kaylee • Built for Web Site Development</p>
+    </div>
   </footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <script src="assets/script.js"></script>
 </body>
 </html>
-
