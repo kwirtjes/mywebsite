@@ -1,118 +1,179 @@
-
-  /* --- page & layout --- */
-  :root{
-    --bg: #d9f3f3;         /* aqua page background */
-    --panel: #fff1b8;      /* butter yellow */
-    --lav: #e6dbff;        /* lavender header bar */
-    --ink: #1b2340;        /* dark text */
-    --muted: #5c6a87;
-    --card: #ffffff;
-    --teal: #82cfc7;       /* footer bar */
-    --teal-dark:#64b9b0;
-    --shadow: 0 12px 30px rgba(0,0,0,.08);
-    --radius: 20px;
-  }
-
-  *{box-sizing:border-box}
-  html,body{margin:0;padding:0}
-  body{background:var(--bg); font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--ink);}
-
-  .wrap{max-width:980px; margin:32px auto; padding:0 16px;}
-
-  /* --- header pill --- */
-  .header-pill{
-    background:var(--lav);
-    border-radius:18px;
-    box-shadow:var(--shadow);
-    padding:14px 18px;
-  }
-  .nav{
-    display:flex; justify-content:center; gap:42px; flex-wrap:wrap;
-    font-weight:600; color:#222;
-  }
-  .nav a{ color:#2b3356; text-decoration:none; }
-  .nav a:hover{ text-decoration:underline; }
-
-  /* --- content panel --- */
-  .panel{
-    background:var(--panel);
-    border-radius:16px;
-    margin-top:14px;
-    box-shadow:var(--shadow);
-    padding:22px 22px 28px;
-  }
-
-  /* decorative squiggle under the nav */
-  .squiggle{ height:36px; overflow:hidden; }
-  .squiggle path{ stroke:#f4cfe1; stroke-width:3; fill:none; opacity:.9 }
-
-  h2.title{
-    text-align:center;
-    font-size:clamp(1.6rem, 1.2rem + 1.8vw, 2.2rem);
-    font-family: ui-rounded, "Comic Sans MS", "Bradley Hand", cursive; /* playful cursive fallback */
-    color:#cf6a9a;
-    margin:8px 0 18px;
-  }
-
-  /* --- cards row --- */
-  .cards{
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap:22px;
-    padding:6px 10px;
-  }
-  .card{
-    background:var(--card);
-    border-radius:18px;
-    box-shadow:var(--shadow);
-    padding:16px;
-  }
-  .thumb{
-    display:block; width:100%; aspect-ratio: 4/3;
-    border-radius:18px; overflow:hidden; background:#f2f4f7;
-    margin-bottom:12px;
-  }
-  .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
-  .caption{ color:var(--muted); margin-top:8px; }
-
-  /* --- footer bar --- */
-  .footer-bar{
-    margin-top:18px;
-    background:linear-gradient(180deg, var(--teal), var(--teal-dark));
-    border-radius:18px;
-    box-shadow:var(--shadow);
-    min-height:110px;
-    display:flex; align-items:center; justify-content:space-between;
-    padding:26px 28px;
-    color:#fff;
-  }
-  .brand{
-    font-family: ui-rounded, "Comic Sans MS", "Bradley Hand", cursive;
-    font-size:1.8rem; letter-spacing:.4px;
-  }
-  /* footer links */
-.footer-links {
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 0.95rem;
-  margin: 0 20px;
+/* --- page & layout --- */
+:root{
+  --bg:#d9f3f3;        /* aqua page background */
+  --panel:#fff1b8;     /* butter yellow */
+  --lav:#e6dbff;       /* lavender header bar */
+  --ink:#1b2340;       /* dark text */
+  --muted:#5c6a87;
+  --card:#ffffff;
+  --teal:#82cfc7;      /* footer bar */
+  --teal-dark:#64b9b0;
+  --shadow:0 12px 30px rgba(0,0,0,.08);
+  --radius:20px;
 }
 
-.footer-links a {
-  color: #ffffff;
-  text-decoration: none;
-  padding: 0 6px;
+*{
+  box-sizing:border-box;
 }
 
-.footer-links a:hover {
-  text-decoration: underline;
-  opacity: 0.9;
+html, body{
+  margin:0;
+  padding:0;
 }
 
-  .chip{
-  width:96px; height:96px; border-radius:50%;
+body{
+  background:var(--bg);
+  font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--ink);
+}
+
+.wrap{
+  max-width:980px;
+  margin:32px auto;
+  padding:0 16px;
+}
+
+/* --- header pill --- */
+.header-pill{
+  background:var(--lav);
+  border-radius:18px;
+  box-shadow:var(--shadow);
+  padding:14px 18px;
+}
+
+.nav{
+  display:flex;
+  justify-content:center;
+  gap:42px;
+  flex-wrap:wrap;
+  font-weight:600;
+  color:#222;
+}
+
+.nav a{
+  color:#2b3356;
+  text-decoration:none;
+}
+
+.nav a:hover{
+  text-decoration:underline;
+}
+
+/* --- content panel --- */
+.panel{
+  background:var(--panel);
+  border-radius:16px;
+  margin-top:14px;
+  box-shadow:var(--shadow);
+  padding:22px 22px 28px;
+}
+
+/* decorative squiggle under the nav */
+.squiggle{
+  height:36px;
   overflow:hidden;
-  box-shadow:0 4px 10px rgba(0,0,0,0.15), inset 0 0 0 3px rgba(255,255,255,0.35);
+}
+
+.squiggle path{
+  stroke:#f4cfe1;
+  stroke-width:3;
+  fill:none;
+  opacity:.9;
+}
+
+/* section title */
+h2.title{
+  text-align:center;
+  font-size:clamp(1.6rem, 1.2rem + 1.8vw, 2.2rem);
+  font-family:ui-rounded, "Comic Sans MS", "Bradley Hand", cursive;
+  color:#cf6a9a;
+  margin:8px 0 18px;
+}
+
+/* --- cards row --- */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:22px;
+  padding:6px 10px;
+}
+
+.card{
+  background:var(--card);
+  border-radius:18px;
+  box-shadow:var(--shadow);
+  padding:16px;
+}
+
+.thumb{
+  display:block;
+  width:100%;
+  aspect-ratio:4/3;
+  border-radius:18px;
+  overflow:hidden;
+  background:#f2f4f7;
+  margin-bottom:12px;
+}
+
+.thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.caption{
+  color:var(--muted);
+  margin-top:8px;
+}
+
+/* --- footer bar --- */
+.footer-bar{
+  margin-top:18px;
+  background:linear-gradient(180deg, var(--teal), var(--teal-dark));
+  border-radius:18px;
+  box-shadow:var(--shadow);
+  min-height:110px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:26px 28px;
+  color:#fff;
+}
+
+.brand{
+  font-family:ui-rounded, "Comic Sans MS", "Bradley Hand", cursive;
+  font-size:1.8rem;
+  letter-spacing:.4px;
+}
+
+/* footer links */
+.footer-links{
+  color:#ffffff;
+  font-weight:600;
+  font-size:0.95rem;
+  margin:0 20px;
+}
+
+.footer-links a{
+  color:#ffffff;
+  text-decoration:none;
+  padding:0 6px;
+}
+
+.footer-links a:hover{
+  text-decoration:underline;
+  opacity:0.9;
+}
+
+/* selfie chip */
+.chip{
+  width:96px;
+  height:96px;
+  border-radius:50%;
+  overflow:hidden;
+  box-shadow:0 4px 10px rgba(0,0,0,0.15),
+             inset 0 0 3px rgba(255,255,255,0.35);
 }
 
 .chip img{
@@ -122,11 +183,23 @@
   display:block;
 }
 
-  /* responsive */
-  @media (max-width:860px){ .cards{ grid-template-columns: 1fr 1fr; } }
-  @media (max-width:560px){
-    .cards{ grid-template-columns: 1fr; }
-    .footer-bar{ flex-direction:column; gap:14px; text-align:center; }
+/* --- responsive --- */
+@media (max-width:860px){
+  .cards{
+    grid-template-columns:1fr 1fr;
   }
+}
+
+@media (max-width:560px){
+  .cards{
+    grid-template-columns:1fr;
+  }
+  .footer-bar{
+    flex-direction:column;
+    gap:14px;
+    text-align:center;
+  }
+}
+
 
 
