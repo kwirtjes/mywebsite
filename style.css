@@ -1,4 +1,4 @@
-<style>
+
   /* --- page & layout --- */
   :root{
     --bg: #d9f3f3;         /* aqua page background */
@@ -128,5 +128,5 @@
     .cards{ grid-template-columns: 1fr; }
     .footer-bar{ flex-direction:column; gap:14px; text-align:center; }
   }
-</style>
+
 
