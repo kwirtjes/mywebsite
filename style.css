@@ -130,12 +130,3 @@
   }
 </style>
 
-<div class="wrap">
-    <!-- lavender rounded header with nav -->
-    <header class="header-pill" role="banner">
-      <nav class="nav" aria-label="Main">
-        <a href="#about">About</a>
-        <a href="#">Home</a>
-        <a href="#blogs">Blogs</a>
-        <a href="#images">Images</a>
-        <a href="#message">Message</a>
